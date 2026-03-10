@@ -27,7 +27,7 @@ import streamlit as st
 from pathlib import Path
 
 st.set_page_config(
-    page_title="SACCO Scout Kenya",
+    page_title="Chagua — SACCO Finder Kenya",
     page_icon="🏦",
     layout="wide",
     initial_sidebar_state="expanded",
