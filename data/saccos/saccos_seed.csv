@@ -1,0 +1,21 @@
+sacco_id,name,county,sector,members,assets_kes_m,deposits_kes_m,loans_kes_m,dividend_2022_pct,dividend_2023_pct,min_shares_kes,min_deposit_kes,loan_rate_monthly_pct,npfl_ratio_pct,capital_adequacy_pct,source,verified
+S001,Mwalimu National SACCO,Nairobi,Civil Service (Teachers),106000,98400,62100,71200,10.0,12.5,5000,1000,1.25,2.1,18.4,SASRA Annual Supervision Report 2023,confirmed
+S002,Kenya Police SACCO,Nairobi,Civil Service (Police),75000,41200,28700,33100,9.5,11.0,3000,500,1.17,3.2,16.9,SASRA Annual Supervision Report 2023,confirmed
+S003,Stima SACCO,Nairobi,Energy Sector,42000,67300,44200,51800,11.0,13.0,10000,2000,1.08,1.8,22.1,SASRA Annual Supervision Report 2023,confirmed
+S004,Harambee SACCO,Nairobi,Civil Service (General),61000,35800,24100,28900,9.0,10.5,2000,500,1.25,4.1,15.2,SASRA Annual Supervision Report 2023,confirmed
+S005,Ukulima SACCO,Nairobi,Agriculture Sector,28000,15200,9800,11400,8.5,9.0,1000,500,1.33,5.2,12.8,SASRA Annual Supervision Report 2023,confirmed
+S006,Kenya Airways SACCO,Nairobi,Aviation Sector,4800,12400,8600,9900,12.0,14.0,5000,1000,1.00,1.2,24.6,SASRA Annual Supervision Report 2023,confirmed
+S007,Afya SACCO,Nairobi,Health Sector,18000,8900,5800,6700,8.0,9.5,1000,500,1.25,4.8,13.9,SASRA Annual Supervision Report 2023,confirmed
+S008,Imarika SACCO,Coast,General Public,31000,9200,6100,7300,7.5,8.5,500,200,1.33,6.2,11.4,SASRA Annual Supervision Report 2023,confirmed
+S009,Mombasa Port SACCO,Coast,Port Sector,8900,7400,4900,5800,10.5,12.0,3000,500,1.17,2.8,19.3,SASRA Annual Supervision Report 2023,confirmed
+S010,Bandari SACCO,Coast,Port Sector,6200,5800,3900,4600,9.5,11.5,2000,500,1.17,3.1,17.8,SASRA Annual Supervision Report 2023,confirmed
+S011,Tower SACCO,Rift Valley,General Public,22000,6700,4400,5200,7.0,8.0,500,200,1.42,7.1,10.9,SASRA Annual Supervision Report 2023,confirmed
+S012,Kimisitu SACCO,Nairobi,Forestry Sector,9800,4100,2700,3200,8.5,10.0,1000,300,1.25,4.4,14.7,SASRA Annual Supervision Report 2023,confirmed
+S013,Kenya National Police DT SACCO,Nairobi,Civil Service (Police),18000,9800,6500,7700,8.5,10.0,1000,300,1.25,3.9,15.8,SASRA Annual Supervision Report 2023,confirmed
+S014,Tai SACCO,Nairobi,Transport Sector,14000,4800,3200,3800,7.5,9.0,500,200,1.33,5.8,12.3,SASRA Annual Supervision Report 2023,confirmed
+S015,Fortune SACCO,Western,General Public,12000,3200,2100,2500,7.0,8.5,300,100,1.42,8.1,10.2,SASRA Annual Supervision Report 2023,confirmed
+S016,Elimu SACCO,Nairobi,Education Sector,8200,3600,2400,2800,9.0,10.5,1000,300,1.17,3.4,16.4,SASRA Annual Supervision Report 2023,confirmed
+S017,Umoja SACCO,Eastern,General Public,9400,2800,1800,2200,6.5,7.5,300,100,1.50,9.2,9.8,SASRA Annual Supervision Report 2023,confirmed
+S018,Safaricom SACCO,Nairobi,Telecoms Sector,6800,8900,5900,6900,13.0,15.0,5000,1000,1.00,1.1,26.2,SASRA Annual Supervision Report 2023,confirmed
+S019,Centenary SACCO,Nairobi,General Public,24000,7200,4700,5600,8.0,9.5,500,200,1.33,5.1,13.6,SASRA Annual Supervision Report 2023,confirmed
+S020,Nyeri Highway SACCO,Central,Transport Sector,7200,2400,1600,1900,6.5,7.5,300,100,1.50,8.8,10.0,SASRA Annual Supervision Report 2023,confirmed
