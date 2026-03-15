@@ -82,7 +82,7 @@ saccos = load_saccos()
 # ── Header ────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="ss-header">
-  <h1>🏦 SACCO Scout Kenya</h1>
+  <h1>🏦 ChaguaSacco — SACCO Scout Kenya</h1>
   <p>Compare deposit-taking SACCOs — dividends, loan rates, financial health · SASRA 2023</p>
 </div>
 """, unsafe_allow_html=True)
@@ -413,7 +413,7 @@ with tab_eligibility:
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.divider()
 st.caption(
-    "SACCO Scout · Data: SASRA Annual Supervision Report 2023 (public domain) · "
+    "ChaguaSacco · SACCO Scout · Data: SASRA Annual Supervision Report 2023 (public domain) · "
     "CC BY-NC-ND 4.0 · contact@aikungfu.dev · "
     "Not affiliated with SASRA, nor any listed SACCO · "
     "Past dividends do not guarantee future returns"
