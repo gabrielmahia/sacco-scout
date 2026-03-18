@@ -89,6 +89,31 @@ def fetch_kes_rate():
     except Exception:
         return {"rate": 129.0, "updated": "fallback", "live": False}
 
+
+@st.cache_data(ttl=86400)
+def fetch_kenya_macro_sacco():
+    """World Bank Kenya macro — contextualises SACCO dividend vs inflation."""
+    results = {}
+    for code, label in [
+        ("FP.CPI.TOTL.ZG", "Inflation (CPI %)"),
+        ("NY.GDP.PCAP.CD",  "GDP per capita (USD)"),
+        ("SL.UEM.TOTL.ZS",  "Unemployment (%)"),
+    ]:
+        try:
+            url = (f"https://api.worldbank.org/v2/country/KE/indicator/{code}"
+                   f"?format=json&mrv=1&per_page=1")
+            with urllib.request.urlopen(url, timeout=15) as r:
+                import json as _j
+                d = _j.loads(r.read())
+            entries = [e for e in (d[1] if len(d) > 1 else []) if e.get("value")]
+            if entries:
+                e = entries[0]
+                results[code] = {"label": label, "value": round(e["value"], 2),
+                                  "year": e.get("date", "?")}
+        except Exception:
+            pass
+    return results
+
 @st.cache_data
 def load_saccos() -> pd.DataFrame:
     return pd.read_csv(DATA)
@@ -107,6 +132,25 @@ _kes = fetch_kes_rate()
 _rate_str = f"1 USD = {_kes['rate']:.2f} KES" if _kes["live"] else "Rate unavailable"
 _rate_badge = "📡 Live" if _kes["live"] else "⚠️ Fallback"
 st.caption(f"{_rate_badge} · {_rate_str} · open.er-api.com · {_kes['updated']}")
+
+_wb_s = fetch_kenya_macro_sacco()
+if _wb_s:
+    _wbs_cols = st.columns(len(_wb_s) + 1)
+    if _kes.get("live"):
+        _wbs_cols[0].metric("USD/KES", f"{_kes['rate']:.2f}", help="open.er-api.com live")
+    for i, (_code, _d) in enumerate(_wb_s.items(), 1):
+        _wbs_cols[i].metric(
+            _d["label"].replace(" (%)", "").replace(" (USD)", ""),
+            f"{_d['value']}{'%' if '%' in _d['label'] else ''}",
+            help=f"World Bank {_d['year']}"
+        )
+    # Real return = dividend - inflation
+    _cpi_entry = _wb_s.get("FP.CPI.TOTL.ZG")
+    if _cpi_entry:
+        st.caption(
+            f"📡 World Bank {_cpi_entry['year']} · open.er-api.com · "
+            f"Tip: real return = dividend % minus inflation ({_cpi_entry['value']}%)"
+        )
 
 st.info(
     "📋 **Seed data:** 20 of 175+ SASRA-licensed deposit-taking SACCOs. "
