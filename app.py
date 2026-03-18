@@ -24,6 +24,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
+import urllib.request, json
 from pathlib import Path
 
 st.set_page_config(
@@ -73,6 +74,21 @@ html,body,[class*="css"]{font-family:'IBM Plex Sans',sans-serif;}
 # ── Data ──────────────────────────────────────────────────────────────────────
 DATA = Path(__file__).parent / "data" / "saccos" / "saccos_seed.csv"
 
+
+@st.cache_data(ttl=3600)
+def fetch_kes_rate():
+    """Live USD/KES mid-market rate from open.er-api.com."""
+    try:
+        with urllib.request.urlopen(
+            "https://open.er-api.com/v6/latest/USD", timeout=6
+        ) as r:
+            d = json.loads(r.read())
+        kes = d["rates"]["KES"]
+        updated = d.get("time_last_update_utc", "")[:16]
+        return {"rate": kes, "updated": updated, "live": True}
+    except Exception:
+        return {"rate": 129.0, "updated": "fallback", "live": False}
+
 @st.cache_data
 def load_saccos() -> pd.DataFrame:
     return pd.read_csv(DATA)
@@ -86,6 +102,11 @@ st.markdown("""
   <p>Compare deposit-taking SACCOs — dividends, loan rates, financial health · SASRA 2023</p>
 </div>
 """, unsafe_allow_html=True)
+
+_kes = fetch_kes_rate()
+_rate_str = f"1 USD = {_kes['rate']:.2f} KES" if _kes["live"] else "Rate unavailable"
+_rate_badge = "📡 Live" if _kes["live"] else "⚠️ Fallback"
+st.caption(f"{_rate_badge} · {_rate_str} · open.er-api.com · {_kes['updated']}")
 
 st.info(
     "📋 **Seed data:** 20 of 175+ SASRA-licensed deposit-taking SACCOs. "
