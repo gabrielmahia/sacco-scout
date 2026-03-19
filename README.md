@@ -3,6 +3,7 @@
 Compare Kenya's deposit-taking SACCOs on dividends, loan rates, and financial health.
 
 [![Live App](https://img.shields.io/badge/Live%20App-sacco--scout.streamlit.app-FF4B4B?logo=streamlit)](https://sacco-scout.streamlit.app)
+[![Live Data](https://img.shields.io/badge/Live%20Data-open.er-api.com%20%C2%B7%20World%20Bank-00b4d8)](#sacco-scout)
 [![CI](https://github.com/gabrielmahia/sacco-scout/actions/workflows/ci.yml/badge.svg)](https://github.com/gabrielmahia/sacco-scout/actions)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey)](LICENSE)
 
