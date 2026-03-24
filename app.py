@@ -85,6 +85,18 @@ html,body,[class*="css"]{font-family:'IBM Plex Sans',sans-serif;}
     [data-theme="dark"] [data-testid="stMetricDelta"],
     .stApp[data-theme="dark"] [data-testid="stMetricDelta"] { color: #cccccc !important; }
 
+
+    @media (prefers-color-scheme: dark) {
+        .sacco-card        { background: #1a2535 !important; border-color: #4a9acc !important; color: #d0e8ff !important; }
+        .ratio-badge-good  { background: #1a3d24 !important; color: #7dcea0 !important; }
+        .ratio-badge-warn  { background: #3d3010 !important; color: #f0c060 !important; }
+        .ratio-badge-bad   { background: #3d1015 !important; color: #f1948a !important; }
+    }
+    [data-theme="dark"] .sacco-card,       .stApp[data-theme="dark"] .sacco-card       { background: #1a2535 !important; border-color: #4a9acc !important; color: #d0e8ff !important; }
+    [data-theme="dark"] .ratio-badge-good, .stApp[data-theme="dark"] .ratio-badge-good { background: #1a3d24 !important; color: #7dcea0 !important; }
+    [data-theme="dark"] .ratio-badge-warn, .stApp[data-theme="dark"] .ratio-badge-warn { background: #3d3010 !important; color: #f0c060 !important; }
+    [data-theme="dark"] .ratio-badge-bad,  .stApp[data-theme="dark"] .ratio-badge-bad  { background: #3d1015 !important; color: #f1948a !important; }
+
 </style>
 """, unsafe_allow_html=True)
 
