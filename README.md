@@ -20,7 +20,7 @@ Compare Kenya's deposit-taking SACCOs on dividends, loan rates, and financial he
 
 ## Data
 
-**SASRA Annual Supervision Report 2023** (public domain) — 20 seed SACCOs.
+**SASRA Annual Supervision Report 2023** (public domain; the stated source, figures **not independently verified**, see `data/DATA_STATUS.md`) — 20 seed SACCOs.
 
 SASRA benchmarks: NPFL ≤ 5%, Capital Adequacy ≥ 8%.
 

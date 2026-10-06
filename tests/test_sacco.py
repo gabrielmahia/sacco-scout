@@ -5,6 +5,7 @@ import pytest
 from pathlib import Path
 
 DATA = Path(__file__).parent.parent / "data" / "saccos"
+DATA_ROOT = Path(__file__).parent.parent / "data"
 
 
 class TestSeedData:
@@ -24,10 +25,17 @@ class TestSeedData:
         }
         assert required.issubset(df.columns)
 
-    def test_all_confirmed(self):
-        df = pd.read_csv(DATA / "saccos_seed.csv")
-        bad = df[df["verified"] != "confirmed"]
-        assert len(bad) == 0, f"Unverified: {bad['name'].tolist()}"
+    def test_confirmed_rows_are_backed_by_the_verification_log(self):
+        """'confirmed' must be earned. The old test required EVERY row to say confirmed, so the label could only ever go up and no evidence was needed.
+        A row may claim confirmed only if data/VERIFICATION_LOG.csv records evidence for it."""
+        import csv
+        log = list(csv.DictReader(open(DATA_ROOT / "VERIFICATION_LOG.csv", encoding="utf-8")))
+        logged = {(r["file"], r["row_key"]) for r in log if r["evidence_url"].strip() and r["verified_by"].strip() and r["verified_on"].strip()}
+        for rel, key in [('saccos/saccos_seed.csv', 'sacco_id')]:
+            df = pd.read_csv(DATA_ROOT / rel)
+            assert set(df["verified"]) <= {"confirmed", "unverified"}, rel
+            claimed = {(rel, str(v)) for v in df[df["verified"] == "confirmed"][key]}
+            assert claimed <= logged, f"{rel}: rows claim 'confirmed' with no logged evidence: {sorted(claimed - logged)[:5]}"
 
     def test_source_is_sasra(self):
         df = pd.read_csv(DATA / "saccos_seed.csv")
