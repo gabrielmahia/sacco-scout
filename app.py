@@ -508,7 +508,7 @@ with tab_eligibility:
 st.divider()
 st.caption(
     "ChaguaSacco · SACCO Scout · Data: SASRA Annual Supervision Report 2023 (public domain) · "
-    "CC BY-NC-ND 4.0 · contact@aikungfu.dev · "
+    "PolyForm Noncommercial 1.0.0 · contact@aikungfu.dev · "
     "Not affiliated with SASRA, nor any listed SACCO · "
     "Past dividends do not guarantee future returns"
 )

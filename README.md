@@ -5,7 +5,7 @@ Compare Kenya's deposit-taking SACCOs on dividends, loan rates, and financial he
 [![Live App](https://img.shields.io/badge/Live%20App-sacco--scout.streamlit.app-FF4B4B?logo=streamlit)](https://chaguasacco.streamlit.app)
 [![Live Data](https://img.shields.io/badge/Live%20Data-open.er-api.com%20%C2%B7%20World%20Bank-00b4d8)](#sacco-scout)
 [![CI](https://github.com/gabrielmahia/sacco-scout/actions/workflows/ci.yml/badge.svg)](https://github.com/gabrielmahia/sacco-scout/actions)
-[![License](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey)](LICENSE)
+[![License: PolyForm Noncommercial](https://img.shields.io/badge/License-PolyForm%20Noncommercial%201.0.0-blue.svg)](LICENSE)
 
 > **Chagua Sacco** /tʃɑːɡuɑː sɑːkɔ/ — *Kiswahili*: "Choose your SACCO".
 
@@ -28,7 +28,7 @@ Past dividends do not guarantee future returns. Confirm current rates directly w
 
 ## License
 
-© 2026 Gabriel Mahia · CC BY-NC-ND 4.0 · Not affiliated with SASRA or any listed SACCO.
+© 2026 Gabriel Mahia · PolyForm Noncommercial 1.0.0 · Not affiliated with SASRA or any listed SACCO.
 ---
 
 ## Portfolio
